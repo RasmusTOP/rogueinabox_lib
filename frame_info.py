@@ -29,7 +29,18 @@ class RogueFrameInfo:
         self.map = map
         self.statusbar = statusbar
         self.screen = screen
+    
+    def get_episode(self):
+        """Returns the episode of the current frame.
 
+        :rtype: int
+        :return: The episode number.
+        """
+        try:
+            return self.episode
+        except AttributeError:
+            return None
+            
     def is_victory_frame(self):
         """Returns whether this a victory frame"""
         try:
